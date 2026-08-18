@@ -8,7 +8,7 @@ public class GraphQLTest {
 
     @Test
     public void getCountryDetails() {
-
+        System.out.println("Hello there");
         String payload = "{"
                 + "\"query\":\"query { country(code: \\\"BR\\\") { name capital currency emoji } }\""
                 + "}";
@@ -25,5 +25,6 @@ public class GraphQLTest {
             .body("data.country.capital", equalTo("Brasília"))
             .body("data.country.currency", equalTo("BRL"))
             .body("data.country.emoji", equalTo("🇧🇷"));
+    System.out.println("Completed");
     }
 }
